@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Track Payment | Scholar EasyPay</title>
+    <link rel="stylesheet" href="css/tracking.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <a class="brand" href="dashboard.html"
+          ><span class="brand-mark">KB</span
+          ><span>Scholar EasyPay<small>Student portal</small></span></a
+        ><span class="side-label">Workspace</span>
+        <nav class="side-nav">
+          <a href="dashboard.html">Dashboard</a><a href="fees.html">My Fees</a
+          ><a href="payments.html">Make Payment</a
+          ><a class="active" href="tracking.html">Payment History</a
+          ><a href="receipt.html">Receipt</a><a href="profile.html">Profile</a>
+        </nav>
+      </aside>
+      <main class="main">
+        <header class="app-header">
+          <h1 class="bnt">Track payment</h1>
+          <div class="user-chip">
+            <span>Kongnyui Bliane</span><span class="avatar">KB</span>
+          </div>
+        </header>
+        <section class="content">
+          <div class="welcome">
+            <div>
+              <h2>Payment tracking</h2>
+              <p class="muted">Search with a student and transaction ID.</p>
+            </div>
+          </div>
+          <article class="card">
+            <div class="card-body">
+              <form class="inline-form" action="#">
+                <input
+                  type="text"
+                  placeholder="Student ID: STU-2026-0142"
+                  aria-label="Student ID"
+                /><input
+                  type="text"
+                  placeholder="Payment ID: TXN-88421"
+                  aria-label="Payment ID"
+                /><button class="btn btn-primary" type="submit">
+                  Track payment
+                </button>
+              </form>
+            </div>
+          </article>
+          <article class="card wide-card">
+            <div class="card-header">
+              <h3>Payment result</h3>
+              <span class="status success">Payment successful</span>
+            </div>
+            <div class="card-body">
+              <div class="receipt-grid">
+                <div>
+                  <span>Student name</span><strong>Kongnyui Bliane</strong>
+                </div>
+                <div><span>Student ID</span><strong>STU-2026-0142</strong></div>
+                <div><span>Amount paid</span><strong>150,000 FCFA</strong></div>
+                <div>
+                  <span>Payment method</span><strong>MTN Mobile Money</strong>
+                </div>
+                <div><span>Transaction ID</span><strong>TXN-88421</strong></div>
+                <div><span>Date</span><strong>14 Aug 2026</strong></div>
+                <div>
+                  <span>Remaining balance</span
+                  ><strong class="orange">200,000 FCFA</strong>
+                </div>
+              </div>
+            </div>
+          </article>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Profile | Scholar EasyPay</title>
+    <link rel="stylesheet" href="css/profile.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <a class="brand" href="dashboard.html"
+          ><span class="brand-mark">KB</span
+          ><span>Scholar EasyPay<small>Student portal</small></span></a
+        ><span class="side-label">Workspace</span>
+        <nav class="side-nav">
+          <a href="dashboard.html">Dashboard</a><a href="fees.html">My Fees</a
+          ><a href="payments.html">Make Payment</a
+          ><a href="tracking.html">Payment History</a
+          ><a href="receipt.html">Receipt</a
+          ><a class="active" href="profile.html">Profile</a>
+        </nav>
+      </aside>
+      <main class="main">
+        <header class="app-header">
+          <h1>My profile</h1>
+          <div class="user-chip">
+            <span>Kongnyui Bliane</span><span class="avatar">KB</span>
+          </div>
+        </header>
+        <section class="content">
+          <div class="welcome">
+            <div>
+              <h2>Student profile</h2>
+              <p class="muted">Your account and academic information.</p>
+            </div>
+            <button class="btn btn-primary" id="edit-profile-button" type="button">
+              Edit profile
+            </button>
+          </div>
+          <article class="card">
+            <div
+              class="card-body"
+              style="
+                display: flex;
+                align-items: center;
+                gap: 22px;
+                border-bottom: 1px solid var(--border);
+              "
+            >
+              <div
+                class="avatar"
+                style="width: 72px; height: 72px; font-size: 1.4rem"
+              >
+                KB
+              </div>
+              <div>
+                <h3 style="margin: 0 0 4px; color: var(--navy)">
+                  Kongnyui Bliane
+                </h3>
+                <p class="muted" style="margin: 0">Student ID: STU-2026-0142</p>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="receipt-grid">
+                <div>
+                  <span>Full name</span><strong id="profile-name">Kongnyui Bliane</strong>
+                </div>
+                <div>
+                  <span>Email</span><strong id="profile-email">kongnyuibliane51@gmail.com</strong>
+                </div>
+                <div><span>Phone</span><strong id="profile-phone">+237 677 410 221</strong></div>
+                <div><span>Class</span><strong id="profile-class">USS</strong></div>
+                <div>
+                  <span>Parent/Guardian</span><strong id="profile-guardian">Kongnyui BLIANE</strong>
+                </div>
+                <div><span>Academic year</span><strong>2025/2026</strong></div>
+              </div>
+            </div>
+          </article>
+          <article class="card profile-edit" id="profile-edit-panel" hidden>
+            <div class="card-header"><h3>Edit profile information</h3></div>
+            <div class="card-body">
+              <form id="profile-form">
+                <div class="form-grid">
+                  <div class="form-group full">
+                    <label for="edit-name">Full name</label>
+                    <input id="edit-name" name="name" type="text" required />
+                  </div>
+                  <div class="form-group">
+                    <label for="edit-email">Email</label>
+                    <input id="edit-email" name="email" type="email" required />
+                  </div>
+                  <div class="form-group">
+                    <label for="edit-phone">Phone</label>
+                    <input id="edit-phone" name="phone" type="tel" required />
+                  </div>
+                  <div class="form-group">
+                    <label for="edit-class">Class</label>
+                    <input id="edit-class" name="class" type="text" required />
+                  </div>
+                  <div class="form-group">
+                    <label for="edit-guardian">Parent/Guardian</label>
+                    <input id="edit-guardian" name="guardian" type="text" required />
+                  </div>
+                </div>
+                <div class="profile-form-actions">
+                  <button class="btn btn-primary" type="submit">Save changes</button>
+                  <button class="btn btn-outline" id="cancel-profile-button" type="button">Cancel</button>
+                  <span class="profile-save-status" id="profile-save-status" role="status"></span>
+                </div>
+              </form>
+            </div>
+          </article>
+        </section>
+      </main>
+    </div>
+    <script>
+      const profileFields = ["name", "email", "phone", "class", "guardian"];
+      const profileForm = document.querySelector("#profile-form");
+      const editPanel = document.querySelector("#profile-edit-panel");
+      const editButton = document.querySelector("#edit-profile-button");
+      const cancelButton = document.querySelector("#cancel-profile-button");
+      const saveStatus = document.querySelector("#profile-save-status");
+      const storedProfile = JSON.parse(localStorage.getItem("scholarEasyPayProfile") || "null");
+      const defaultProfile = {
+        name: document.querySelector("#profile-name").textContent,
+        email: document.querySelector("#profile-email").textContent,
+        phone: document.querySelector("#profile-phone").textContent,
+        class: document.querySelector("#profile-class").textContent,
+        guardian: document.querySelector("#profile-guardian").textContent,
+      };
+      const profile = storedProfile || defaultProfile;
+
+      function renderProfile() {
+        profileFields.forEach((field) => {
+          document.querySelector(`#profile-${field}`).textContent = profile[field];
+          document.querySelector(`#edit-${field}`).value = profile[field];
+        });
+      }
+
+      editButton.addEventListener("click", () => {
+        renderProfile();
+        editPanel.hidden = false;
+        editButton.hidden = true;
+        document.querySelector("#edit-name").focus();
+      });
+
+      cancelButton.addEventListener("click", () => {
+        editPanel.hidden = true;
+        editButton.hidden = false;
+        saveStatus.textContent = "";
+      });
+
+      profileForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        profileFields.forEach((field) => {
+          profile[field] = document.querySelector(`#edit-${field}`).value.trim();
+        });
+        localStorage.setItem("scholarEasyPayProfile", JSON.stringify(profile));
+        renderProfile();
+        editPanel.hidden = true;
+        editButton.hidden = false;
+        saveStatus.textContent = "Profile saved.";
+      });
+
+      renderProfile();
+    </script>
+  </body>
+</html>

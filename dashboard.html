@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dashboard | Scholar EasyPay</title>
+    <link rel="stylesheet" href="css/dashboard.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <a class="brand" href="dashboard.html"
+          ><span class="brand-mark">KB</span
+          ><span>Scholar EasyPay<small>Admin workspace</small></span></a
+        ><span class="side-label">Administration</span>
+        <nav class="side-nav">
+          <a class="active" href="dashboard.html">Dashboard</a
+          ><a href="students.html">Students</a
+          ><a href="fees.html">Fee structure</a
+          ><a href="payments.html">Payments</a
+          ><a href="tracking.html">Tracking</a
+          ><a href="profile.html">Profile</a>
+        </nav>
+        <nav class="side-nav sidebar-bottom">
+          <a href="index.html">Log out</a>
+        </nav>
+      </aside>
+      <main class="main">
+        <header class="app-header">
+          <h1>Dashboard</h1>
+          <div class="user-chip">
+            <span>Administrator account</span><span class="avatar">AD</span>
+          </div>
+        </header>
+        <section class="content">
+          <div class="welcome">
+            <div>
+              <h2>Good morning, Administrator</h2>
+              <p class="muted">
+                Here is your school fee collection overview for the 2025/2026
+                academic year.
+              </p>
+            </div>
+            <a class="btn btn-primary" href="students.html">Manage students</a>
+          </div>
+          <div class="summary-grid">
+            <article class="card stat-card">
+              <p>Total students</p>
+              <strong>128</strong>
+              <span class="stat-note">+8 this academic year</span>
+            </article>
+            <article class="card stat-card">
+              <p>Fees collected</p>
+              <strong class="green">43.2M FCFA</strong>
+              <span class="stat-note">68% of annual target</span>
+            </article>
+            <article class="card stat-card">
+              <p>Outstanding fees</p>
+              <strong class="orange">20.3M FCFA</strong>
+              <span class="stat-note">Across 54 accounts</span>
+            </article>
+            <article class="card stat-card">
+              <p>Pending review</p>
+              <strong class="accent">12</strong>
+              <span class="stat-note">Payments awaiting confirmation</span>
+            </article>
+          </div>
+          <div class="admin-grid">
+            <article class="card collection-card">
+              <div class="card-header">
+                <div>
+                  <h3>Collection progress</h3>
+                  <p class="muted">Annual fee target</p>
+                </div>
+                <strong class="collection-total">68%</strong>
+              </div>
+              <div class="progress-track">
+                <div class="progress-bar admin-progress"></div>
+              </div>
+              <div class="progress-meta">
+                <span>43,200,000 FCFA</span><span>63,500,000 FCFA</span>
+              </div>
+              <div class="admin-breakdown">
+                <span><i class="dot green-dot"></i>74 fully paid</span>
+                <span><i class="dot orange-dot"></i>39 partial</span>
+                <span><i class="dot red-dot"></i>15 unpaid</span>
+              </div>
+            </article>
+            <article class="card quick-actions">
+              <div class="card-header"><h3>Quick actions</h3></div>
+              <div class="action-list">
+                <a href="students.html"
+                  ><strong>Add or manage students</strong
+                  ><span>Update enrolment records</span></a
+                >
+                <a href="payments.html"
+                  ><strong>Review payments</strong
+                  ><span>Confirm pending transactions</span></a
+                >
+                <a href="fees.html"
+                  ><strong>Update fee structure</strong
+                  ><span>Manage academic year charges</span></a
+                >
+              </div>
+            </article>
+          </div>
+          <article class="card alert-card">
+            <div>
+              <strong>15 students have unpaid accounts</strong
+              ><span
+                >Review outstanding balances before the 30 Sep 2026
+                deadline.</span
+              >
+            </div>
+            <a class="btn btn-light" href="students.html">View students</a>
+          </article>
+          <div class="content-grid">
+            <article class="card recent-card">
+              <div class="card-header">
+                <h3>Recent payments</h3>
+                <a href="payments.html" class="muted table-link">View all</a>
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Student</th>
+                      <th>Date</th>
+                      <th>Transaction ID</th>
+                      <th>Amount</th>
+                      <th>Method</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Kongnyui Bliane</td>
+                      <td>14 Aug 2026</td>
+                      <td>TXN-88421</td>
+                      <td>150,000 FCFA</td>
+                      <td>MTN MoMo</td>
+                      <td><span class="status success">Successful</span></td>
+                    </tr>
+                    <tr>
+                      <td>Brian M. Fomukong</td>
+                      <td>02 Jul 2026</td>
+                      <td>TXN-86105</td>
+                      <td>150,000 FCFA</td>
+                      <td>Bank transfer</td>
+                      <td><span class="status success">Successful</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

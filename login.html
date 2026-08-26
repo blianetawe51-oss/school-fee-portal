@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Log in | Scholar EasyPay</title>
+    <link rel="stylesheet" href="css/login.css" />
+  </head>
+  <body>
+    <main class="auth-page">
+      <section class="auth-card">
+        <a class="brand" href="index.html"
+          ><span class="brand-mark">KB</span
+          ><span>Scholar EasyPay<small>Fee management portal</small></span></a
+        >
+        <h1>Welcome back</h1>
+        <p class="muted">Log in to view your school fee account.</p>
+        <form id="login-form" action="dashboard.html">
+          <div class="form-group">
+            <label for="identity">Email or student ID</label
+            ><input
+              id="identity"
+              type="text"
+              placeholder="e.g. STU-2026-0142"
+              required
+            />
+          </div>
+          <div class="form-group" style="margin-top: 18px">
+            <label for="password">Password</label
+            ><input
+              id="password"
+              type="password"
+              placeholder="Enter your password"
+              required
+            />
+          </div>
+          <div class="form-footer">
+            <label class="check"><input type="checkbox" /> Remember me</label
+            ><a href="#" class="muted">Forgot password?</a>
+          </div>
+          <button class="btn btn-primary" type="submit">Log in</button>
+        </form>
+        <p class="auth-switch">
+          New to Scholar EasyPay?
+          <a
+            href="register.html"
+            style="color: var(--primary); font-weight: 700"
+            >Create an account</a
+          >
+        </p>
+      </section>
+    </main>
+    <script src="js/auth.js"></script>
+  </body>
+</html>

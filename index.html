@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>School Fee Portal | Simple, secure payments</title>
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="index.html"
+        ><span class="brand-mark">KB</span
+        ><span>Scholar EasyPay<small>Fee management portal</small></span></a
+      >
+      <nav class="nav-links">
+        <a href="index.html">Home</a><a href="about.html">About</a
+        ><a href="services.html">Services</a><a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-actions" data-auth-menu>
+        <label class="language-picker" for="language-select">
+          <span class="sr-only">Language</span>
+          <select id="language-select" aria-label="Select language">
+            <option value="en">English</option>
+            <option value="fr">Français</option>
+          </select>
+        </label>
+        <div class="notification-menu">
+          <button
+            class="notification-button"
+            type="button"
+            aria-label="Open notifications"
+            aria-expanded="false"
+          >
+            <span aria-hidden="true">&#128276;</span>
+            <span class="notification-count">1</span>
+          </button>
+          <div class="notification-panel" hidden>
+            <strong>Notifications</strong>
+            <p>Your outstanding school fee balance is 200,000 FCFA.</p>
+            <a href="fees.html">View fee details</a>
+          </div>
+        </div>
+        <a class="btn btn-outline" href="login.html">Log in</a
+        ><a class="btn btn-primary" href="register.html">Register</a>
+      </div>
+    </header>
+    <main>
+      <section class="hero" id="home">
+        <div class="container hero-grid">
+          <div>
+            <span
+              class="eyebrow"
+              data-en="School finance, made clear"
+              data-fr="La finance scolaire, en toute clarte"
+              >School finance, made clear</span
+            >
+            <h1
+              data-en="Every payment, accounted for."
+              data-fr="Chaque paiement, parfaitement suivi."
+            >
+              Every payment, accounted for.
+            </h1>
+            <p
+              data-en="ScholarPay gives students, families, and school teams one trusted place to manage fees, confirm payments, and stay on top of balances."
+              data-fr="ScholarPay offre aux eleves, aux familles et aux equipes scolaires un espace fiable pour gerer les frais, confirmer les paiements et suivre les soldes."
+            >
+              ScholarPay gives students, families, and school teams one trusted
+              place to manage fees, confirm payments, and stay on top of
+              balances.
+            </p>
+            <div class="hero-actions">
+              <a
+                class="btn btn-primary"
+                href="payments.html"
+                data-en="Pay school fees"
+                data-fr="Payer les frais scolaires"
+                >Pay school fees</a
+              ><a
+                class="btn btn-outline"
+                href="tracking.html"
+                data-en="Track payment"
+                data-fr="Suivre le paiement"
+                >Track payment</a
+              >
+            </div>
+          </div>
+          <div class="hero-panel">
+            <h3
+              data-en="Student fee overview"
+              data-fr="Resume des frais scolaires"
+            >
+              Student fee overview
+            </h3>
+            <div class="balance">300,000 FCFA</div>
+            <div class="mini-row">
+              <span data-en="Total fees" data-fr="Total des frais"
+                >Total fees</span
+              ><strong>500,000 FCFA</strong>
+            </div>
+            <div class="mini-row">
+              <span data-en="Outstanding" data-fr="Solde restant"
+                >Outstanding</span
+              ><strong>200,000 FCFA</strong>
+            </div>
+            <div class="mini-row">
+              <span data-en="Payment status" data-fr="Statut du paiement"
+                >Payment status</span
+              ><strong data-en="Partially paid" data-fr="Partiellement paye"
+                >Partially paid</strong
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="trust-band">
+        <div class="container">
+          <div>
+            <h2
+              data-en="A clearer path from invoice to receipt."
+              data-fr="Un parcours plus clair, de la facture au recu."
+            >
+              A clearer path from invoice to receipt.
+            </h2>
+            <p
+              data-en="Designed for dependable day-to-day school operations."
+              data-fr="Concu pour une gestion scolaire quotidienne fiable."
+            >
+              Designed for dependable day-to-day school operations.
+            </p>
+          </div>
+          <a
+            class="btn btn-light"
+            href="login.html"
+            data-en="Open your portal"
+            data-fr="Ouvrir votre portail"
+            >Open your portal</a
+          >
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="container footer-row">
+        <span>© 2026 ScholarPay School Fee Portal</span
+        ><span>Secure records. Better visibility.</span>
+      </div>
+    </footer>
+    <script src="js/auth.js"></script>
+    <script src="js/home-language.js"></script>
+    <script src="js/notifications.js"></script>
+  </body>
+</html>

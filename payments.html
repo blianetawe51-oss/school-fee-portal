@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Make Payment | Scholar EasyPay</title>
+    <link rel="stylesheet" href="css/payments.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <a class="brand" href="dashboard.html"
+          ><span class="brand-mark">KB</span
+          ><span>Scholar EasyPay<small>Student portal</small></span></a
+        >
+        <span class="side-label">Workspace</span>
+        <nav class="side-nav">
+          <a href="dashboard.html">Dashboard</a><a href="fees.html">My Fees</a
+          ><a class="active" href="payments.html">Make Payment</a
+          ><a href="tracking.html">Payment History</a
+          ><a href="receipt.html">Receipt</a><a href="profile.html">Profile</a>
+        </nav>
+      </aside>
+      <main class="main">
+        <header class="app-header">
+          <h1>Make a payment</h1>
+          <div class="user-chip">
+            <span>Kongnyui Bliane</span><span class="avatar">KB</span>
+          </div>
+        </header>
+        <section class="content">
+          <div class="welcome">
+            <div>
+              <h2>Payment details</h2>
+              <p class="muted">
+                Submit your payment details for confirmation through WhatsApp.
+              </p>
+            </div>
+          </div>
+          <div class="content-grid">
+            <article class="card">
+              <div class="card-header"><h3>Account summary</h3></div>
+              <div class="card-body">
+                <div class="detail-list">
+                  <div>
+                    <span>Student name</span><strong>Kongnyui Bliane</strong>
+                  </div>
+                  <div>
+                    <span>Student ID</span><strong>STU-2026-0142</strong>
+                  </div>
+                  <div><span>Class</span><strong>Form USS</strong></div>
+                  <div><span>Total fee</span><strong>500,000 FCFA</strong></div>
+                  <div>
+                    <span>Amount already paid</span
+                    ><strong class="green">300,000 FCFA</strong>
+                  </div>
+                  <div>
+                    <span>Outstanding balance</span
+                    ><strong class="orange">200,000 FCFA</strong>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="card">
+              <div class="card-header"><h3>Payment form</h3></div>
+              <div class="card-body">
+                <form id="payment-form">
+                  <div class="form-grid">
+                    <div class="form-group">
+                      <label for="amount">Amount to pay</label
+                      ><input
+                        id="amount"
+                        name="amount"
+                        type="number"
+                        min="1"
+                        placeholder="200000"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="method">Payment method</label
+                      ><select id="method" name="method">
+                        <option>MTN Mobile Money</option>
+                        <option>Orange Money</option>
+                        <option>Bank Transfer</option>
+                        <option>Cash</option>
+                      </select>
+                    </div>
+                    <div class="form-group full">
+                      <label for="reference">Transaction/reference number</label
+                      ><input
+                        id="reference"
+                        name="reference"
+                        type="text"
+                        placeholder="Enter payment reference"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <button
+                    id="save-payment-button"
+                    class="btn btn-whatsapp form-submit"
+                    type="submit"
+                  >
+                    Submit payment
+                  </button>
+                </form>
+                <div class="whatsapp-notice">
+                  <div>
+                    <strong>Send payment confirmation</strong>
+                    <p>
+                      WhatsApp will open with your payment details. The school
+                      can reply with feedback or confirmation.
+                    </p>
+                  </div>
+                  <a class="btn btn-primary" href="receipt.html">
+                    View receipt
+                  </a>
+                </div>
+                <p class="prototype-note">
+                  This static GitHub Pages version sends the details to
+                  WhatsApp; it does not save to a database.
+                </p>
+              </div>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="js/payment.js"></script>
+  </body>
+</html>

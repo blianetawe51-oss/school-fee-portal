@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Students | Scholar Easy Pay</title>
+    <link rel="stylesheet" href="css/students.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <a class="brand" href="dashboard.html"
+          ><span class="brand-mark">KB</span
+          ><span>Scholar EasyPay<small>Admin workspace</small></span></a
+        ><span class="side-label">Administration</span>
+        <nav class="side-nav">
+          <a href="dashboard.html">Dashboard</a
+          ><a class="active" href="students.html">Students</a
+          ><a href="fees.html">Fee structure</a
+          ><a href="payments.html">Payments</a
+          ><a href="tracking.html">Tracking</a
+          ><a href="profile.html">Profile</a>
+        </nav>
+        <nav class="side-nav sidebar-bottom">
+          <a href="index.html">Log out</a>
+        </nav>
+      </aside>
+      <main class="main">
+        <header class="app-header">
+          <h1>Student management</h1>
+          <div class="user-chip">
+            <span>Admin account</span><span class="avatar">AD</span>
+          </div>
+        </header>
+        <section class="content">
+          <div class="welcome">
+            <div>
+              <h2>Students</h2>
+              <p class="muted">Manage enrolment records and fee status.</p>
+            </div>
+            <a class="btn btn-primary" href="register.html">+ Add student</a>
+          </div>
+          <div class="summary-grid">
+            <article class="card stat-card">
+              <p>Total students</p>
+              <strong>128</strong>
+              <span class="stat-note">+8 this academic year</span>
+            </article>
+            <article class="card stat-card">
+              <p>Fees fully paid</p>
+              <strong class="green">74</strong>
+              <span class="stat-note">58% of all students</span>
+            </article>
+            <article class="card stat-card">
+              <p>Partially paid</p>
+              <strong class="orange">39</strong>
+              <span class="stat-note">Follow-up required</span>
+            </article>
+            <article class="card stat-card">
+              <p>Unpaid accounts</p>
+              <strong class="danger">15</strong>
+              <span class="stat-note">Needs immediate attention</span>
+            </article>
+          </div>
+          <article class="card collection-card">
+            <div class="card-header">
+              <div>
+                <h3>Fee collection progress</h3>
+                <p class="muted">
+                  Current collection for the 2025/2026 academic year.
+                </p>
+              </div>
+              <strong class="collection-total">68%</strong>
+            </div>
+            <div class="progress-track">
+              <div class="progress-bar" style="width: 68%"></div>
+            </div>
+            <div class="progress-meta">
+              <span>43,200,000 FCFA collected</span
+              ><span>63,500,000 FCFA target</span>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-header">
+              <div class="inline-form" style="width: min(430px, 100%)">
+                <input
+                  id="student-search"
+                  type="search"
+                  placeholder="Search by name, ID or class"
+                  aria-label="Search students"
+                /><select id="status-filter" aria-label="Filter by fee status">
+                  <option value="all">All statuses</option>
+                  <option value="paid">Paid</option>
+                  <option value="partial">Partially paid</option>
+                  <option value="unpaid">Unpaid</option>
+                </select>
+              </div>
+              <span id="student-count" class="muted">128 students</span>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr data-status="partial">
+                    <th>Student ID</th>
+                    <th>Student name</th>
+                    <th>Class</th>
+                    <th>Parent/Guardian</th>
+                    <th>Phone</th>
+                    <th>Fee status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>STU-2026-0142</td>
+                    <td>Kongnyui Bliane</td>
+                    <td>Form 3A</td>
+                    <td>Kongnyui BLIANE</td>
+                    <td>+237 677 410 221</td>
+                    <td><span class="status warning">Partially paid</span></td>
+                    <td>
+                      <a href="profile.html" class="table-action"
+                        >View profile</a
+                      >
+                    </td>
+                  </tr>
+                  <tr data-status="paid">
+                    <td>STU-2026-0118</td>
+                    <td>Brian M. Fomukong</td>
+                    <td>Form 2B</td>
+                    <td>Mary Fomukong</td>
+                    <td>+237 690 225 114</td>
+                    <td><span class="status success">Paid</span></td>
+                    <td>
+                      <a href="profile.html" class="table-action"
+                        >View profile</a
+                      >
+                    </td>
+                  </tr>
+                  <tr data-status="unpaid">
+                    <td>STU-2026-0097</td>
+                    <td>Chisom E. Nsoh</td>
+                    <td>Form 4C</td>
+                    <td>Emmanuel Nsoh</td>
+                    <td>+237 655 910 403</td>
+                    <td><span class="status danger">Unpaid</span></td>
+                    <td>
+                      <a href="profile.html" class="table-action"
+                        >View profile</a
+                      >
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+        </section>
+      </main>
+    </div>
+    <script>
+      const searchInput = document.querySelector("#student-search");
+      const statusFilter = document.querySelector("#status-filter");
+      const studentRows = [...document.querySelectorAll("tbody tr")];
+      const studentCount = document.querySelector("#student-count");
+
+      function filterStudents() {
+        const query = searchInput.value.trim().toLowerCase();
+        const status = statusFilter.value;
+        let visibleCount = 0;
+
+        studentRows.forEach((row) => {
+          const matchesQuery = row.textContent.toLowerCase().includes(query);
+          const matchesStatus =
+            status === "all" || row.dataset.status === status;
+          const visible = matchesQuery && matchesStatus;
+          row.hidden = !visible;
+          if (visible) visibleCount += 1;
+        });
+
+        studentCount.textContent = `${visibleCount} of 128 students`;
+      }
+
+      searchInput.addEventListener("input", filterStudents);
+      statusFilter.addEventListener("change", filterStudents);
+    </script>
+  </body>
+</html>
