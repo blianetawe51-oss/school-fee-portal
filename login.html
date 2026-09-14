@@ -15,7 +15,7 @@
         >
         <h1>Welcome back</h1>
         <p class="muted">Log in to view your school fee account.</p>
-        <form id="login-form" action="dashboard.html">
+        <form id="login-form">
           <div class="form-group">
             <label for="identity">Email or student ID</label
             ><input
@@ -51,5 +51,12 @@
       </section>
     </main>
     <script src="auth.js"></script>
+    <script>
+      document.getElementById('login-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        // Simulate authentication and redirect to dashboard
+        window.location.href = 'dashboard.html';
+      });
+    </script>
   </body>
 </html>
